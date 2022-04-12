@@ -1,11 +1,10 @@
 package com.tarea.app.data;
 
-public class Cesar extends Encript{
-    public int codigo;
+public class CesarTrece extends Encript{
+    public int codigo = 13;
 
-    public Cesar(String cadena, int codigo) {
+    public CesarTrece(String cadena) {
         super(cadena);
-        this.codigo = codigo;
     }
 
     public String encriptar() {

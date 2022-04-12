@@ -1,8 +1,8 @@
 package com.tarea.app.data;
 
-public class ordenVocales extends Encript{
+public class OrdenVocales extends Encript{
 
-    public ordenVocales(String cadena) {
+    public OrdenVocales(String cadena) {
         super(cadena);
     }
 
