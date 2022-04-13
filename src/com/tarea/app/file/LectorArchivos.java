@@ -8,6 +8,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+//se utiliza el patrón builder para el lector de archivos.
+
 public class LectorArchivos {
     public String fileName;
     private String plainText;
@@ -21,7 +24,7 @@ public class LectorArchivos {
         encriptados = encriptar();
 
     }
-
+    //Lee toda la información del archivo y retorna un string con todo el texto
     private String leer() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         try {
@@ -41,7 +44,7 @@ public class LectorArchivos {
         }
         return null;
     }
-
+    //separa el string en los casos a encriptar
     private ArrayList<String[]> separar(){
         String[] textoSeparado = plainText.split(System.lineSeparator());
         ArrayList<String[]> casosEncriptar = new ArrayList<String[]>();
@@ -50,7 +53,7 @@ public class LectorArchivos {
         }
         return casosEncriptar;
     }
-
+    //encripta las strings de acuerdo a la codificación deseada
     private ArrayList<String> encriptar(){
         ArrayList<String> encriptados = new ArrayList<String>();
         for (String[] s : encryptCases) {
@@ -66,7 +69,7 @@ public class LectorArchivos {
         return encriptados;
     }
 
-
+    //getters
     public String getFileName() {
         return fileName;
     }
@@ -83,6 +86,7 @@ public class LectorArchivos {
         return encryptCases;
     }
 
+    //setters
     public void setPlainText(String plainText) {
         this.plainText = plainText;
         setEncriptados();

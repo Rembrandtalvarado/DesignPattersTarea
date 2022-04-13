@@ -15,7 +15,7 @@ public class FileUtilities {
             e.printStackTrace();
         }
     }
-
+    //se utiliza para crear un archivo y escribir en el.
     public static void escribirArchivo(String fileName, String data) {
         try {
             FileWriter writer = new FileWriter(fileName);

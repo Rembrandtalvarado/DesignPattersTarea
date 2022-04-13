@@ -1,12 +1,15 @@
 package com.tarea.app.data;
 
+//Extiende la clase abstracta Encript
 public class CesarTrece extends Encript{
+    //en este caso particular se usa la codificación cesar de 13 posiciones, pero se puede modificar para que sea tantos como el usuario quiera.
     public int codigo = 13;
 
     public CesarTrece(String cadena) {
         super(cadena);
     }
 
+    //codifica el string de tal forma que se el caracter se reemplaza por el caracter que está 13 posiciones adelante del seleccionado.
     public String encriptar() {
         StringBuilder cifrado = new StringBuilder();
         codigo = codigo % 26;

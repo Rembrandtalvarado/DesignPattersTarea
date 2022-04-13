@@ -1,12 +1,13 @@
 package com.tarea.app.data;
 
+//extiende el la clase abstracta Encript
 public class OrdenVocales extends Encript{
 
     public OrdenVocales(String cadena) {
         super(cadena);
     }
 
-
+//Verifica si un caracter es vocal
     public static boolean isVowel(char c)
     {
         if(c=='a' || c=='A' || c=='e' || c=='E' || c=='i' || c=='I' || c=='o' || c=='O' || c=='u' || c=='U')
@@ -18,7 +19,7 @@ public class OrdenVocales extends Encript{
             return false;
         }
     }
-
+//invierte el orden de las vocales de tal forma que queda de forma espejo con centro en la "i"
     public String encriptar() {
         StringBuilder vocalInvertida = new StringBuilder();
         for (int i = 0; i < cadena.length(); i++) {
