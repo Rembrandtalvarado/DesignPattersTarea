@@ -2,28 +2,29 @@ package com.tarea.app.file.csv;
 
 import java.io.*;
 
+// NON FUNCTIONAL
+// NON FUNCTIONAL
+// NON FUNCTIONAL
+// NON FUNCTIONAL
+// NON FUNCTIONAL
 public class CSVtoTXT {
-    public static void convert(String filename) throws IOException {
-        // Use File
-        File file = new File(filename);
-        // Use FileReader to red CSV file
-        FileReader fr = new FileReader(file);
-        // User BufferReader
-        BufferedReader br = new BufferedReader(fr);
-        String line;
+    public static String readCSV(String filename) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            while (line != null){
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+            }
+            br.close();
+            System.out.println(sb.toString());
+            return sb.toString();
 
-        String[] tempArr;
-        // User FileWriter to write content to text file
-        FileWriter writer = new FileWriter("salida.txt");
-        // Use while loop to check when file contains data
-        while ((line = br.readLine()) != null) {
-            tempArr = line.split(",");
-            // User for loop to iterate String Array and write data to text file
-                writer.write(tempArr[0]+'-'+tempArr[1]);
-
-            // Write each line of CSV file to multiple lines
-            writer.write("\n");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        writer.close();
+        return null;
     }
 }

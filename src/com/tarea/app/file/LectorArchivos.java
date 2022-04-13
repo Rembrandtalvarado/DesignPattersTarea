@@ -33,7 +33,7 @@ public class LectorArchivos {
                 line = br.readLine();
             }
             br.close();
-
+            System.out.println(sb.toString());
             return sb.toString();
 
         } catch (IOException e) {
@@ -52,7 +52,7 @@ public class LectorArchivos {
     }
 
     private ArrayList<String> encriptar(){
-        ArrayList<String> encriptados = new ArrayList<>();
+        ArrayList<String> encriptados = new ArrayList<String>();
         for (String[] s : encryptCases) {
             if (s[0].toUpperCase().equals("CESAR")){
                 Encript cesar = new CesarTrece(s[1]);
@@ -81,6 +81,21 @@ public class LectorArchivos {
 
     public ArrayList<String[]> getEncryptCases() {
         return encryptCases;
+    }
+
+    public void setPlainText(String plainText) {
+        this.plainText = plainText;
+        setEncriptados();
+        setEncryptCases();
+
+    }
+
+    private void setEncriptados() {
+        this.encriptados = encriptar();
+    }
+
+    private void setEncryptCases() {
+        this.encryptCases = separar();
     }
 
     public String toString(){
